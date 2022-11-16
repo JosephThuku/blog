@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{%block content%}
+<!-- not that the object_list comes from ListView 
+refrence in our views where we import ListView
+-->
+{% for post in object_list %}
+
+<div class ="post-entry">
+    <h2>
+        <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
+    </h2>
+    <p>{{ post.body }}</p>
+</div>
+ {%endfor%}
+ {% endblock content %}
